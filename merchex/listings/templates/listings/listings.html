@@ -1,0 +1,16 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Titres</h1>
+    <p>
+        Titres préférées au nombre de {{listings|length}} :
+    </p>
+    <ul>
+        {% for lst in listings %}
+        <li>{{lst.title}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% extends 'listings/base.html' %}
+<!-- cette balise indique que "hello.html" hérite de "base.html"-->
+
+{% block content %}
+
+    <h1>Hello Django !</h1>
+    <p>
+        J'ai 
+        {% if bands|length < 5 %}
+            peu de 
+        {% elif bands|length < 10 %}
+            quelques
+        {% else %}
+            beaucoup de 
+        {% endif %}
+            groupes préférés qui sont au nombre de {{bands|length}} :
+    </p>
+    <ul>
+        {% for band in bands %}
+            <li>groupe : {{band.name|upper}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
