@@ -1,14 +1,12 @@
+
 {% extends 'listings/base.html' %}
 
 {% block content %}
 
-    <h1>Contact</h1>
-    <p>mail : faw@fawsoft.fr</p>
-    <p>tel : 06.14.00.00.01</p>
+    <h1>Construction d'un groupe </h1>
 
     <form action="" method="post">
         {% csrf_token %}
-        <!-- le "as_p" encadre les champs du formulaire par des balises <p> -->
         {{ form.as_p }}
         <input type="submit" value="Envoyer">
     </form>

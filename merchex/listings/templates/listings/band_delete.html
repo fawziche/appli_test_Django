@@ -1,0 +1,17 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Supprimer le groupe</h1>
+
+    <p>Etes vous sûr de vouloir supprimer le gorupe "{{ band.name }}" ?</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Supprimer">
+    </form>
+
+    <a href="{% url 'band-list' %}">Retourner à la liste des groupes</a>
+    
+{% endblock %}

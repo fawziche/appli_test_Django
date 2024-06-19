@@ -5,6 +5,9 @@
 {% block content %}
 
     <h1>Hello Django !</h1>
+    
+    <a href="{% url 'band-add' %}">Construire un nouveau groupe</a>
+
     <p>
         J'ai 
         {% if bands|length < 5 %}
@@ -18,7 +21,11 @@
     </p>
     <ul>
         {% for band in bands %}
-            <li>groupe : {{band.name|upper}}</li>
+            <li>
+                <a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a>
+                - <a href="{% url 'band-update' band.id %}">[modifier]</a>
+                - <a href="{% url 'band-delete' band.id %}">[supprimer]</a>
+            </li>
         {% endfor %}
     </ul>
 

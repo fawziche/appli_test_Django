@@ -1,2 +1,4 @@
 #on ignore le dossier qui permet d'associer à notre répertoire un envt virtuel
 env 
+#on ignore la BDD sqlite3
+merchex/db.sqlite3
